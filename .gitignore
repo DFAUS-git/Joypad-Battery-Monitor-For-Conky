@@ -1,5 +1,5 @@
 #Script Example: https://imgur.com/a/MuZGhxG
-
+#Youtube: https://youtube.com/@WUCATILLY
 
 #A Basic Script To Monitor The Battery Status Of Your Joypad With Conky Or Conky-Manager, Copy Both Scripts To Your Conky Source
 #Statement To Define If Joypad Is Connected Or Not, If Connected Display Battery 'Status', If Not Connected Output Text 'Device Not Connected'
