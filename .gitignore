@@ -1,32 +1,22 @@
-# Prerequisites
-*.d
+#Script Example: https://imgur.com/a/MuZGhxG
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
 
-# Precompiled Headers
-*.gch
-*.pch
+#A Basic Script To Monitor The Battery Status Of Your Joypad With Conky Or Conky-Manager, Copy Both Scripts To Your Conky Source
+#Statement To Define If Joypad Is Connected Or Not, If Connected Display Battery 'Status', If Not Connected Output Text 'Device Not Connected'
+#You Will Need Your <Device Id> And Add It To The Script Below
+#Device Id Can Be Located By Connecting Your Joypad To Linux <Bluetooth Or Cable>
+#Go To This Folder Path: '/sys/class/power_supply/sony_controller_battery_<This Is Your device_id>'
+#Place The Image.png You Want To Display In: '/home/user/Pictures/' 
+#You Must Apply Your Own Text Colour
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
 
-# Fortran module files
-*.mod
-*.smod
+#Use This To Display The Icon Of Your Choice
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+${image /home/user/Pictures/image.png -p -2,150 -s 50x50} 
 
-# Executables
-*.exe
-*.out
-*.app
+
+
+#Replace My Device_Id '84:30:95:41:54:e6' With Your Device_Id
+
+${if_existing /sys/class/power_supply/sony_controller_battery_84:30:95:41:54:e6} ${alignc 132}${exec cat /sys/class/power_supply/sony_controller_battery_84:30:95:41:54:e6/capacity}% ${else}\
+${alignc 70}Device Not Connected${endif}
